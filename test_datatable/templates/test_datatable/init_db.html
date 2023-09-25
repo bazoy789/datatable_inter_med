@@ -1,0 +1,36 @@
+{% load render_table from django_tables2 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовое задание</title>
+</head>
+<style>
+    th {
+        border: 1px solid grey;
+    }
+    td {
+        border: 1px solid grey;
+    }
+    table {
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <form method="GET">
+        <select name="select">
+        {% for i in mod %}
+            <option name="head">{{ i.verbose_name }}</option>
+        {% endfor %}
+        </select>
+        <input type="text" name="search" onfocus="this.value=''" placeholder="Search by colum">
+            {% if search_name %}
+            <a>{{ search_name }}</a>
+            {% endif %}
+        <button type="submit">Search</button>
+    </form>
+
+    {% render_table page_obj %}
+    <h1>Инициализация БД завершена</h1>
+</body>
+</html>
