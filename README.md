@@ -1,7 +1,7 @@
 # Datatable Интер мед
 
 ### установить зависимости 
-- pip install -r requirements.txt
+- pip install -r requirements
 
 ### запустить app
 - python manege.py runserver
